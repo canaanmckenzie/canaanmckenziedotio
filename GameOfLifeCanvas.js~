@@ -1,0 +1,6 @@
+//Canaan McKenzie Copyright 2017
+
+//canvas splash screen
+var canvas = document.getElementById("GOLcanvas"){
+    canvas.width = window.innerWith;
+    canvas.height = window.innerHeight; }

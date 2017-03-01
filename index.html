@@ -19,25 +19,22 @@
 	</span>
     </header>
 
+    
     <!--Conway's game of life splash screen-->
     <div id="wrapper">
       <div id="Title">
 	
 	<a href="."> My Implementation of Conway's Game of Life</a>
-      </div>
-      
-      <canvas id ="canvas" width=window.innerWidth height="433"></canvas>
-
-	<!--Resize canvas to screen size--->
-	<script type="text/javascript">
-	  function resize_canvas(){
-	  canvas = documentElementbyId("canvas")
-	  if (canvas.width < window.innerwidth) {canvas.width = window.innerWidth; }
-	  if (canvas.height < window.innerHeight) {canvas.height = winddow.innerHeight; }
-	</script>
 	
+	<canvas id="GOLcanvas"</canvas>
+		
+      </div>
+
+     <script type = "text/javascript" src="/canaanmckenziedotio/GameOfLifeCanvas.js"></script>
+      
     </div>
-    
+
+
     <article>
       
       <!-- <div class="RSSFEEDSPLASH -->

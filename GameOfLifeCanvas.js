@@ -1,0 +1,25 @@
+//Canaan McKenzie Copyright 2017
+
+//Canvas Splash Screen Resize
+//IIFP
+
+(function () {
+    var canvas = document.getElementById("GOLcanvas"),
+	context = canvas.getContext('2D');
+    //dynamically fill browser window
+    window.addEventListener('resize',resizeCanvas,false);
+
+    function resizeCanvas() {
+	canvas.width = window.innerWidth;
+	canvas.height = "50";
+
+	// Call into GOL Drawing functions here
+
+    }
+    resizeCanvas();
+
+    //Drawing function - Will this cause it to refresh every time the size changes?
+    
+})();
+
+	
