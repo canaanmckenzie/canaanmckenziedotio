@@ -5,8 +5,9 @@
   <head>
     <meta charset="utf-8">
     <title>Canaan McKenzie</title>
-    <link href="/canaanmckenziedotio/styles/simplestyle.css" rel="stylesheet">
+    <link href="/canaanmckenziedotio/styles/simplestyle.css" rel="stylesheet">   
     <!-- <link href="ICONGOESHERE" rel="icon" -->
+    
   </head>
   <body>
     <header class="index">
@@ -17,17 +18,38 @@
 	  <a href="/canaanmckenziedotio/resume.pdf">Resume</a>
 	</span>
     </header>
+
+    <!--Conway's game of life splash screen-->
+    <div id="wrapper">
+      <div id="Title">
+	
+	<a href="."> My Implementation of Conway's Game of Life</a>
+      </div>
+      
+      <canvas id ="canvas" width=window.innerWidth height="433"></canvas>
+
+	<!--Resize canvas to screen size--->
+	<script type="text/javascript">
+	  function resize_canvas(){
+	  canvas = documentElementbyId("canvas")
+	  if (canvas.width < window.innerwidth) {canvas.width = window.innerWidth; }
+	  if (canvas.height < window.innerHeight) {canvas.height = winddow.innerHeight; }
+	</script>
+	
+    </div>
     
     <article>
+      
       <!-- <div class="RSSFEEDSPLASH -->
-      <div class="mechE">
+      
+      <div class="Research">
+	<a href="http://www.uvmebrl.com/">Engineered Biomaterials Research Laboratory</a>
 
       </div>
 
       <div class="CS Projects">
 	
       </div>
-
       
     </article>
   </body>

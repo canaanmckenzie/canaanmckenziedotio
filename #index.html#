@@ -1,0 +1,56 @@
+
+<!-- copyright Canaan McKenzie 2017 -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Canaan McKenzie</title>
+    <link href="/canaanmckenziedotio/styles/simplestyle.css" rel="stylesheet">   
+    <!-- <link href="ICONGOESHERE" rel="icon" -->
+    
+  </head>
+  <body>
+    <header class="index">
+	<a href="/">Canaan McKenzie</a>
+	<span class="navigation_bar">
+	  <a href="https://twitter.com/canaanmckenzie">Twitter</a>
+	  <a href="https://www.linkedin.com/in/canaan-mckenzie-039583b6">LinkedIn</a>
+	  <a href="/canaanmckenziedotio/resume.pdf">Resume</a>
+	</span>
+    </header>
+
+    <!--Conway's game of life splash screen-->
+    <div id="wrapper">
+      <div id="Title">
+	
+	<a href="."> My Implementation of Conway's Game of Life</a>
+      </div>
+      
+      <canvas id ="canvas" width= height="433"></canvas>
+
+	<!--Resize canvas to screen size--->
+	<script type="text/javascript">
+	  function resize_canvas(){
+	  canvas = documentElementbyId("canvas")
+	  if (canvas.width < window.innerwidth) {canvas.width = window.innerWidth; }
+	  if (canvas.height < window.innerHeight) {canvas.height = winddow.innerHeight; }
+	</script>
+	
+    </div>
+    
+    <article>
+      
+      <!-- <div class="RSSFEEDSPLASH -->
+      
+      <div class="Research">
+	<a href="http://www.uvmebrl.com/">Engineered Biomaterials Research Laboratory</a>
+
+      </div>
+
+      <div class="CS Projects">
+	
+      </div>
+      
+    </article>
+  </body>
+</html>

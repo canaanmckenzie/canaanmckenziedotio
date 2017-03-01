@@ -1,0 +1,16 @@
+Javascript Resize canvas: Requires drawing code called in draw function
+
+function draw() {
+  var ctx = (a canvas context);
+  ctx.canvas.width  = window.innerWidth;
+  ctx.canvas.height = window.innerHeight;
+  //...drawing code...
+}
+
+CSS
+
+html, body {
+width:  100x;
+height: 100x;
+margin:  0px;}
+
