@@ -4,8 +4,8 @@
 
 /* -- added overflow hidden -- */
 html, body {
-    margins:0;
-    padding:0;
+    margins:0px;
+    padding:0px;
     height:100%;
     width: 100%;
     overflow:hidden;

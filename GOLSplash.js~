@@ -1,0 +1,29 @@
+//Copyright Canaan McKenzie 2017
+
+//GOL in js based on Conway's Game of Life
+
+// Page Load
+(function () {
+    
+init: function() {
+    try {
+	this.ResetLife.init(); // RESETS Algorithm
+	this.loadConfig();     //load configuration ???
+	this.loadURLConfig();  //Load custom URL init conditions
+	this.ElementReferences(); //getElementsById
+	this.canvas.init();  // necessary??
+
+	this.prepare(); } catch (custom_error) {
+	    alert("Error: "+custom_error);
+	}
+},
+
+    loadConfig: function() {
+	var colors, grid, zoom;
+
+	this.autoplay = this.helpers.guURLParameter('autoplay') 
+
+
+}
+
+
