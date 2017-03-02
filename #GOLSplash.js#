@@ -137,7 +137,7 @@ var GOL = function(input_params){
 	   return next_generation;
        } ;
 
-init();
+    init();
 
 return {
 

@@ -22,11 +22,13 @@
     
     <!--Conway's game of life splash screen-->
     <div id="wrapper">
+
       <div id="Title">
 	
 	<a href="."> My Implementation of Conway's Game of Life</a>
 	
 	<canvas id="GOLcanvas" class = "splashscreen"></canvas>
+	
 		
       </div>
     </div>
