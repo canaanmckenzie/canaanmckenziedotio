@@ -1,20 +1,40 @@
-//Copyright 2017 Canaan McKenzie
+//Canaan McKenzie Copyright 2017
 
-//Conway's game of life, implementation
+//Canvas Splash Screen Resize
+//IIFP
 
-var canvas = document.getElementById("GOLcanvas").getContext('2d'),
+(function () {
+    var canvas = document.getElementById("GOLcanvas"),
+	context = canvas.getContext('2d');
 
-    cells = [];
+        //dynamically fill browser window
+        window.addEventListener('resize',resizeCanvas,false);
 
-    //display colors
-    canvas.strokeStyle = '#7FFB90';
-    canvas.fillStyle  = '#1BA92F';
-var gridSize = 64; //size of grid
-init();
+    function resizeCanvas() {
+	
+	canvas.width = window.innerWidth;
+
+	//console.log(canvas.width);
+	//console.log(context);
+	
+	canvas.height = "50";
+
+    }
+   
+    resizeCanvas(); //call initially before starting GOL
+    
+    
+     cells = [];
+    
+    var gridSize_w = canvas.width; //size of grid
+    var gridSize_h = canvas.height;
+    
+    init();
+    
 function init() {
-    for (var i = 0; i < gridSize; i++){	
+    for (var i = 0; i < gridSize_w; i++){	
 	cells[i] = [];	
-	for (var j=0; j < gridSize; j++){	    
+	for (var j=0; j < gridSize_h; j++){	    
 	    cells[i][j] = 0;
 	}
     }
@@ -38,6 +58,7 @@ function init() {
 	[25, 1],[25, 2],[25, 6],[25, 7],
         [35, 3],[35, 4],
 	[36, 3],[36, 4]
+
         
 	] 
     .forEach(function(point) {
@@ -58,8 +79,7 @@ function update(){
 
 	    return cells[x] && cells[x][y];
 	}
-
-	//check below x,y
+		//check below x,y
 	if (is_filled(x -1, y-1)){ amount++;}
 	if (is_filled(x, y-1)){ amount++;}
 	if (is_filled(x+1, y-1)){ amount++;}
@@ -75,7 +95,8 @@ function update(){
 
 	return amount;
 
-    }    
+    }
+    
     cells.forEach(function(row, x){
 	result[x] = [];	
 	row.forEach(function(cell,y){	    
@@ -91,24 +112,38 @@ function update(){
 	});
     });
     cells = result;
+    
     draw();
 }
 
-function draw() {
-    //change dynamically - With canvas resize code
-    canvas.clearRect(0, 0, 1512, 512);    
+    
+
+    function draw() {
+	//console.log(canvas);
+	//display colors
+    context.strokeStyle = '#7FFB90';
+    context.fillStyle  = '#1BA92F';
+	
+	//change dynamically - With canvas resize code
+	console.log(canvas.width,canvas.height);
+    context.clearRect(0, 0, canvas.width, canvas.height);    
     cells.forEach(function(row, x) {	
         row.forEach(function(cell, y) {	    
-            canvas.beginPath();
-            canvas.rect(x*8, y*8, 8, 8);	    
+            context.beginPath();
+            context.rect(x*8, y*8, 8, 8);
             if (cell) {
 		
-                canvas.fill();		
+                context.fill();		
             } else {		
-                canvas.stroke();
+                context.stroke();
             }
         });
-    });  
+    });
+       
     setTimeout(function() {update();}, 70);
     //window.requestAnimationFrame(update); // Too fast!
-}
+   }
+
+    })();
+
+	
