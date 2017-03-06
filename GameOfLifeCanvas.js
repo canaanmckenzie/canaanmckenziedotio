@@ -17,7 +17,7 @@
 	//console.log(canvas.width);
 	//console.log(context);
 	
-	canvas.height = "50";
+	canvas.height = "112";
 
     }
    
@@ -49,6 +49,7 @@ function init() {
 	[13, 3],[13, 9],
 	[14, 3],[14, 9],
 	[15, 6],
+
 	[16, 4],[16, 8],
 	[17, 5],[17, 6],[17, 7],
 	[18, 6],
@@ -59,8 +60,8 @@ function init() {
         [35, 3],[35, 4],
 	[36, 3],[36, 4]
 
-        
-	] 
+   ]
+    
     .forEach(function(point) {
         cells[point[0]][point[1]] = 1;
     });    
@@ -98,10 +99,14 @@ function update(){
     }
     
     cells.forEach(function(row, x){
-	result[x] = [];	
-	row.forEach(function(cell,y){	    
+	
+	result[x] = [];
+	
+	row.forEach(function(cell,y){
+	    
 	    var alive = 0,
 		count = count_neighbors(x,y);
+	    //add rulestrings here
 	    if (cell > 0) {
 		alive = count === 2 || count === 3 ? 1 : 0;
 	    } else {
@@ -121,8 +126,8 @@ function update(){
     function draw() {
 	//console.log(canvas);
 	//display colors
-    context.strokeStyle = '#7FFB90';
-    context.fillStyle  = '#1BA92F';
+    context.strokeStyle = '#F2F3F4'; //grid color
+    context.fillStyle  = '#1BA92F'; //live cell color
 	
 	//change dynamically - With canvas resize code
 	console.log(canvas.width,canvas.height);
@@ -142,7 +147,7 @@ function update(){
        
     setTimeout(function() {update();}, 70);
     //window.requestAnimationFrame(update); // Too fast!
-   }
+    }
 
     })();
 
